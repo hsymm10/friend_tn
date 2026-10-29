@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisah Kita di Titik Nol - Sampai Jumpa Lagi</title>
+
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="Website kenangan dan perpisahan menyentuh hati untuk Teman-Teman Titik Nol. Menampilkan lini masa kebersamaan, galeri foto, amplop surat interaktif, dan papan harapan.">
+    <meta name="keywords" content="perpisahan, titik nol, kenangan, memori, persahabatan, guestbook, reuni">
+    <meta name="author" content="Sahabat Titik Nol">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styleheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Canvas background for particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Background Music Audio Tag -->
+    <audio id="bgMusic" loop preload="auto" playsinline>
+        <!-- Prefer an actual audio file first to avoid incompatible first-source selection -->
+        <source src="assets/music/sad_piano.mp3" type="audio/mpeg">
+        <source src="assets/music/WhatsApp Video 2026-06-23 at 9.26.27 PM.mp4" type="video/mp4">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Floating controls (Music & Navigation toggle) -->
+    <div class="floating-controls">
+        <button id="musicToggle" class="control-btn" title="Mainkan Musik" aria-label="Mainkan Musik">
+            <i class="fas fa-music"></i>
+            <span class="music-wave-container">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="logo">
+            <span class="logo-text">Titik<span>Nol</span></span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#timeline" class="nav-link">Kisah Kita</a>
+            <a href="#gallery" class="nav-link">Memori</a>
+            <a href="#letter" class="nav-link">Surat</a>
+            <a href="#guestbook" class="nav-link">Harapan</a>
+        </nav>
+        <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle scroll-reveal">SEBUAH PERSEMBAHAN UNTUK</p>
+                <h1 class="hero-title scroll-reveal">Teman-Teman Titik Nol</h1>
+                <div class="divider scroll-reveal">
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                </div>
+                <p class="hero-description scroll-reveal">
+                    "Titik Nol mungkin hanya sebuah tempat, tetapi kebersamaan di dalamnya telah menjadi bagian dari
+                    rumah dalam ingatan."
+                </p>
+                <div class="hero-buttons scroll-reveal">
+                    <a href="#timeline" class="btn btn-primary">
+                        <span>Buka Lembaran Memori</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="#timeline" class="scroll-down-indicator" aria-label="Scroll Down">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- Stories Section (Replacing Timeline) -->
+        <section id="timeline" class="stories-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Jejak Langkah Kita</span>
+                    <h2 class="section-title">Cerita Kebersamaan</h2>
+                </div>
+
+                <div class="stories-text-container glass-card scroll-reveal">
+                    <p class="stories-paragraph">
+                        Terima kasih banyak kepada MR dan Ms (teman-teman Titik Nol) yang telah menemani dan
+                        membantu saya selama belajar di Titik Nol.
+                    </p>
+                    <p class="stories-paragraph">
+                        Saya sangat bersyukur karena sejak pertama kali masuk kelas, saya disambut dengan begitu baik,
+                        diajak berkenalan, dan dibuat merasa nyaman. Meskipun pertemuan kita terbilang singkat, ada
+                        begitu banyak pelajaran berharga yang saya dapatkan.
+                    </p>
+                    <p class="stories-paragraph">
+                        Saya belajar bahwa menjadi manusia yang baik bukan hanya tentang kemampuan yang dimiliki, tetapi
+                        juga tentang bagaimana kita saling membantu saat mengalami kesulitan, saling mendukung, serta
+                        menghargai satu sama lain. Saya juga sangat menikmati setiap momen saat belajar, berbincang,
+                        bercanda, dan berbagi cerita bersama kalian.
+                    </p>
+                    <p class="stories-paragraph">
+                        Hal yang cukup mengejutkan bagi saya adalah ternyata saya menjadi peserta termuda di kelas. Di
+                        sisi lain, banyak teman-teman yang usianya lebih matang, ada yang baru lulus sekolah, masih
+                        menjalani perkuliahan, hingga yang sudah lulus kuliah. Dari kalian semua, saya mendapatkan
+                        banyak pengalaman, wawasan, dan pelajaran hidup yang sangat berharga.
+                    </p>
+                    <p class="stories-paragraph">
+                        Terima kasih atas kebaikan, kebersamaan, dan kenangan indah yang telah kita ciptakan bersama.
+                        Semoga kita semua diberikan kemudahan dalam meraih cita-cita, kesuksesan dalam setiap langkah,
+                        serta dapat bertemu kembali di kesempatan yang lebih baik.
+                    </p>
+                    <p class="stories-paragraph">
+                        Sampai jumpa, dan sukses selalu untuk MR, Sister (teman-teman Titik Nol). Kalian akan selalu
+                        menjadi bagian dari perjalanan yang tidak akan saya lupakan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Polaroid Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Galeri Memori</span>
+                    <h2 class="section-title">Lembaran Kenangan Kita</h2>
+                    <p class="section-desc">Tangkapan layar momen-momen hangat. Klik pada gambar untuk memperbesar
+                        kenangan indah kita.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Polaroid Item 1 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/35c3624f-4926-4ae8-8ab3-4ae093ef9ae0.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/35c3624f-4926-4ae8-8ab3-4ae093ef9ae0.jpeg" alt="Kenangan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Hari-Hari Kita</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 2 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/4e30e275-e072-4cc6-92e5-395f44e9d982.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/4e30e275-e072-4cc6-92e5-395f44e9d982.jpeg" alt="Kenangan 2">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Kebersamaan yang Hangat</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 3 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/52030cd2-0ef2-4d84-86b5-a77ade1b4648.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/52030cd2-0ef2-4d84-86b5-a77ade1b4648.jpeg" alt="Kenangan 3">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Mengabadikan Momen Bersama</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 4 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/5aeafb1d-3451-46dc-b42e-ccaee721f7fc.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/5aeafb1d-3451-46dc-b42e-ccaee721f7fc.jpeg" alt="Kenangan 4">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Berbagi Cerita Keceriaan Bersama </p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 5 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/6658d02a-fe0a-475c-b69b-927ae294b6f2.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/6658d02a-fe0a-475c-b69b-927ae294b6f2.jpeg" alt="Kenangan 5">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Tak Terlupakan</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 6 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/695fc263-fa7d-44ed-aa3e-a6bc61b36bd9.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/695fc263-fa7d-44ed-aa3e-a6bc61b36bd9.jpeg" alt="Kenangan 6">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Langkah Bersama </p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 7 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/8f42b103-bc76-4ac3-8d9c-65703cbe8324.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/8f42b103-bc76-4ac3-8d9c-65703cbe8324.jpeg" alt="Kenangan 7">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Setiap Sudut Pertemanan Titik Nol </p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 8 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/a3ecc87f-04ae-419c-9f06-e715388577d3.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/a3ecc87f-04ae-419c-9f06-e715388577d3.jpeg" alt="Kenangan 8">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Senyuman yang Selalu Khas</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 9 -->
+                    <div class="polaroid-card scroll-reveal"
+                        data-src="assets/images/c806f29a-19f4-4aa6-8774-bfd0c310a067.jpeg" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/c806f29a-19f4-4aa6-8774-bfd0c310a067.jpeg" alt="Kenangan 9">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Posee ROORR </p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 10 - Image 6 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image6.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image6.png" alt="Kenangan 10">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Gaya OK</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 11 - Image 7 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image7.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image8.png" alt="Kenangan 11">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Kebersamaan </p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 12 - Image 8 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image8.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image7.png" alt="Kenangan 12">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Pasar Senja</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 13 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image5.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image5.png" alt="Kenangan Main di kost">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Main di kost</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Polaroid Item 15 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image3.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image3.png" alt="Kenangan Tambahan 3">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Belajar</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image1.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image1.png" alt="Kenangan Tambahan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Nasehat</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image9.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image9.png" alt="Kenangan Tambahan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Foto Bersama Mr Fajri</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image10.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image10.png" alt="Kenangan Tambahan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Foto Bersama Mr Fajri</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image13.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image13.png" alt="Kenangan Tambahan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Foto Bersama Ms Aulia</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image14.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image14.png" alt="Kenangan Tambahan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Foto Bersama Ms Aulia</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/image11.png" data-type="image">
+                        <div class="polaroid-img-wrapper">
+                            <img src="assets/images/image11.png" alt="Kenangan Tambahan 1">
+                            <div class="polaroid-hover">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Mengerjakan Soal</p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid Item 14 -->
+                    <div class="polaroid-card scroll-reveal" data-src="assets/images/video.mp4" data-type="video">
+                        <div class="polaroid-img-wrapper"
+                            style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+                            <video muted autoplay loop playsinline preload="metadata" src="assets/images/video.mp4"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                                Browser Anda tidak mendukung video.
+                            </video>
+                            <div class="video-overlay-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Klik untuk putar video</span>
+                            </div>
+                        </div>
+                        <div class="polaroid-caption">
+                            <p class="caption-text">Momen Video Hukuman </p>
+                            <span class="caption-date"><i class="far fa-calendar-alt"></i> Juni 2026</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive 3D-Like Letter Section -->
+        <section id="letter" class="letter-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Surat Untukmu</span>
+                    <h2 class="section-title">Amplop Surat Rahasia</h2>
+                    <p class="section-desc">Klik amplop di bawah ini untuk membuka sebuah surat hangat yang ditulis
+                        khusus untuk Teman-Teman Titik Nol.</p>
+                </div>
+
+                <div class="envelope-wrapper scroll-reveal">
+                    <div class="envelope" id="interactiveEnvelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter-card" id="letterCard">
+                            <div class="letter-header">
+                                <span class="letter-title">Untuk Mr and Ms, Teman-Teman Titik Nol</span>
+                                <span class="letter-date">23 Juni 2026</span>
+                            </div>
+                            <hr class="letter-line">
+                            <div class="letter-body" id="typewriterTarget">
+                                <!-- Typewriter effect will print message here -->
+                            </div>
+                            <div class="letter-footer">
+                                <p>Salam hangat,</p>
+                                <strong class="writer-name">Hisyam Sayyid Alzam</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="envelope-hint scroll-reveal" id="envelopeHint">
+                    <i class="fas fa-hand-pointer"></i> Klik amplop di atas untuk membaca pesan hangat
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Wishes Guestbook Section -->
+        <section id="guestbook" class="guestbook-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Kotak Harapan</span>
+                    <h2 class="section-title">Papan Harapan & Doa</h2>
+                    <p class="section-desc">Tinggalkan pesan menyentuh, doa, atau kutipan perpisahanmu di papan memori
+                        interaktif ini agar dapat dibaca selamanya.</p>
+                </div>
+
+                <div class="guestbook-layout">
+                    <!-- Wish Form -->
+                    <div class="wish-form-wrapper glass-card scroll-reveal">
+                        <h3>Tinggalkan Jejak Harapan</h3>
+                        <form id="wishForm">
+                            <div class="form-group">
+                                <label for="wishName"><i class="fas fa-user"></i> Nama Panggilan</label>
+                                <input type="text" id="wishName" placeholder="Contoh: Budi, Rara, Dika" required
+                                    maxlength="25">
+                            </div>
+                            <div class="form-group">
+                                <label for="wishText"><i class="fas fa-comment-alt"></i> Pesan Perpisahan /
+                                    Harapan</label>
+                                <textarea id="wishText"
+                                    placeholder="Tuliskan kata-kata perpisahan atau harapan masa depanmu..." required
+                                    maxlength="250" rows="5"></textarea>
+                            </div>
+
+                            <!-- Custom sticky note color selector -->
+                            <div class="form-group">
+                                <label><i class="fas fa-palette"></i> Pilih Warna Sticky Note</label>
+                                <div class="color-options">
+                                    <label class="color-option-label gold">
+                                        <input type="radio" name="noteColor" value="note-gold" checked>
+                                        <span class="color-circle gold"></span>
+                                    </label>
+                                    <label class="color-option-label rose">
+                                        <input type="radio" name="noteColor" value="note-rose">
+                                        <span class="color-circle rose"></span>
+                                    </label>
+                                    <label class="color-option-label twilight">
+                                        <input type="radio" name="noteColor" value="note-twilight">
+                                        <span class="color-circle twilight"></span>
+                                    </label>
+                                    <label class="color-option-label mint">
+                                        <input type="radio" name="noteColor" value="note-mint">
+                                        <span class="color-circle mint"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Kirim ke Papan Harapan
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Interactive Sticky Board -->
+                    <div class="board-wrapper scroll-reveal">
+                        <div class="board-wood-frame">
+                            <div class="board-header">
+                                <i class="fas fa-thumbtack"></i>
+                                <span>Papan Pesan Memori</span>
+                            </div>
+                            <div class="sticky-board" id="stickyBoard">
+                                <!-- Sticky notes will be appended here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+            <div class="section-container scroll-reveal">
+                <div class="countdown-card glass-card">
+                    <h3>Hitung Mundur Kepulangan</h3>
+                    <p>Saya akan pulang hari Sabtu pagi tanggal 27 Juni jam 08.25 WIB.</p>
+
+                    <div class="countdown-timer" id="countdownTimer">
+                        <div class="time-block">
+                            <span class="number" id="days">00</span>
+                            <span class="label">Hari</span>
+                        </div>
+                        <div class="time-block">
+                            <span class="number" id="hours">00</span>
+                            <span class="label">Jam</span>
+                        </div>
+                        <div class="time-block">
+                            <span class="number" id="minutes">00</span>
+                            <span class="label">Menit</span>
+                        </div>
+                        <div class="time-block">
+                            <span class="number" id="seconds">00</span>
+                            <span class="label">Detik</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Popup Modal for Gallery -->
+    <div class="lightbox" id="galleryLightbox">
+        <button class="lightbox-close" aria-label="Tutup"><i class="fas fa-times"></i></button>
+        <div class="lightbox-content">
+            <!-- Dynamic Image or Video will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>Sukses Membutuhkan Proses Bukan Protes menikmatilah proses nya pasti akan indah pada waktunya</p>
+                <cite>~Hisyam Sayyid Alzam</cite>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-info">
+                <div class="footer-meta">
+                    <p class="copyright">&copy; 2026 Teman-Teman Titik Nol. Made by <strong>H2SN</strong>. Crafted with
+                        the memories of 'Pare Baik'.</p>
+                    <p class="instagram-info">
+                        <a href="https://instagram.com/hszamm__" target="_blank" rel="noopener noreferrer"
+                            class="instagram-link">
+                            <i class="fab fa-instagram"></i> @hszamm__
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
